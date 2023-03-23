@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimeService } from '../../services/anime.service';
-import { Anime } from '../../interfaces/animes';
 
 @Component({
   selector: 'app-anime',
@@ -13,13 +12,14 @@ export class AnimePage implements OnInit {
     private animeService: AnimeService
   ) { }
 
-  bestAnimes : Anime[];
+  bestAnimes :any| null;
 
   ngOnInit() {
+
     this.animeService.bestAnimes.subscribe(resp=>{
       this.bestAnimes = resp;
-      console.log(this.bestAnimes)
-    });
+    })
+    ;
     
   }
 
