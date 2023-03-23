@@ -1,0 +1,7 @@
+{
+  "name": "whatToSeeTracker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
