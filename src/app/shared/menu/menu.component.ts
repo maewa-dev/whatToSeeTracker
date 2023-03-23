@@ -15,7 +15,7 @@ export class MenuComponent  implements OnInit {
     {
       name: 'Anime',
       icon: '/assets/icon/anime.png',
-      path: '',
+      path: 'anime',
     },
     {
       name: 'Series',

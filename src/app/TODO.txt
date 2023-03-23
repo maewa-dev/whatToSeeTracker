@@ -1,0 +1,4 @@
+client_id: 5bba675b79c32d0e657633817613dc7c0abda342a465b8591896d170b944d852
+
+
+GET  https://api.simkl.com/anime/trending/week?client_id=5bba675b79c32d0e657633817613dc7c0abda342a465b8591896d170b944d852
