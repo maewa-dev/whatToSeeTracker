@@ -17,12 +17,12 @@ export class AnimeService {
 
 
   _bestAnimes = new BehaviorSubject( {} );
-  url: string = 'https://api.simkl.com/anime';
+  url: string = 'https://api.simkl.com';
   apikey: string = '5bba675b79c32d0e657633817613dc7c0abda342a465b8591896d170b944d852';
   postersUrl: string = 'https://simkl.in'
 
   getBestAnimes(): Observable<Anime[] | {}> {
-    const url = `${ this.url }/best/?client_id${ this.apikey }`
+    const url = `${ this.url }/anime/best/?client_id${ this.apikey }`
     return this.http.get(url);
   }
 
