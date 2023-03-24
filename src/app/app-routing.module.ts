@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'anime',
     loadChildren: () => import('./pages/anime/anime.module').then( m => m.AnimePageModule)
   },
+  {
+    path: 'anime-info/:simklCode',
+    loadChildren: () => import('./pages/anime-info/anime-info.module').then( m => m.AnimeInfoPageModule)
+  },
 ];
 
 @NgModule({

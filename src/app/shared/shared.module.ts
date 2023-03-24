@@ -17,7 +17,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
   imports: [
     CommonModule,
     IonicModule,
-    RouterModule
+    RouterModule,
   ],
   exports:[
     MenuComponent,
