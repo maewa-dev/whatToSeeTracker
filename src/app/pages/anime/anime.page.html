@@ -4,7 +4,7 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col size="4" *ngFor="let anime of bestAnimes">
+      <ion-col size="2" *ngFor="let anime of bestAnimes">
         <ion-card routerLink='{{ "/anime-info/" + anime.ids.simkl_id }}' >
           <img src='{{ "https://simkl.in/posters/" + anime.poster + "_w" + ".jpg" }}'>
           <ion-card-header>
