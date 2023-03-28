@@ -5,6 +5,7 @@ import { switchMap, tap } from 'rxjs';
 import { AnimeInfo } from '../../interfaces/anime-info';
 import { numberToArray } from 'src/app/utils/functions';
 import { Console } from 'console';
+import { status } from 'src/app/utils/colors';
 
 @Component({
   selector: 'app-anime-info',
@@ -26,6 +27,7 @@ export class AnimeInfoPage implements OnInit {
   simklCode: any;
   animeInfo!: AnimeInfo;
   episodes: any[];
+  status: {[key: string]: string} = status
 
   ngOnInit(): void {
     this.router.events.subscribe(e => {
@@ -54,6 +56,10 @@ export class AnimeInfoPage implements OnInit {
 
   toggleSeen(episode:number ) {
     this.episodes = this.episodes.map(e => e.episode === episode ? {...e, seen: !e.seen } : e);
+  }
+
+  get statusColorScheme(): string {
+    return this.status[this.animeInfo?.status] 
   }
 
 }

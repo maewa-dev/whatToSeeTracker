@@ -27,7 +27,7 @@
         <ion-col size="1">
           <ion-card-header>
 
-            <ion-chip > {{animeInfo?.status | titlecase }}</ion-chip>
+            <ion-chip [color]="statusColorScheme" > {{animeInfo?.status | titlecase }}</ion-chip>
           </ion-card-header>
         </ion-col>
         <ion-card-content>
