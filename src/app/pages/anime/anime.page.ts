@@ -12,15 +12,15 @@ export class AnimePage implements OnInit {
     private animeService: AnimeService
   ) { }
 
-  bestAnimes :any| null;
+  bestAnimes : any[] = [];
 
   ngOnInit() {
-
     this.animeService.bestAnimes.subscribe(resp=>{
-      this.bestAnimes = resp;
+      if(Array.isArray(resp)){
+        this.bestAnimes = resp;
+      } 
     })
     ;
-    
   }
 
 
