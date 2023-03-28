@@ -4,32 +4,30 @@
     <ion-grid>
       <ion-row >
         <!-- image -->
-        <ion-col size="4">
-
+        <ion-col sizeXl="4" sizeMd="5" sizeSm="12" sizeXs="12" style="text-align: center;">
           <img [alt]="animeInfo?.title" src='{{ "https://simkl.in/posters/" + animeInfo?.poster + "_w" + ".jpg" }}' />
-
         </ion-col>
 
         <!-- info -->
-        <ion-col size="7">
+        <ion-col sizeXl="7" sizeMd="5" sizeSm="12" sizeXs="12">
           <ion-card-header>
             <ion-card-title>{{animeInfo?.title}}</ion-card-title>
+            <ion-card-subtitle>Episodios: {{animeInfo?.total_episodes}}</ion-card-subtitle>
 
             <ion-chip *ngFor="let item of animeInfo?.genres">
               {{item}}
             </ion-chip>
 
-            <ion-card-subtitle>Episodios: {{animeInfo?.total_episodes}}</ion-card-subtitle>
           </ion-card-header>
         </ion-col>
 
         <!-- status -->
-        <ion-col size="1">
+        <ion-col sizeXl="1" sizeMd="2" sizeSm="12" sizeXs="12">
           <ion-card-header>
-
             <ion-chip [color]="statusColorScheme" > {{animeInfo?.status | titlecase }}</ion-chip>
           </ion-card-header>
         </ion-col>
+
         <ion-card-content>
           {{animeInfo?.overview}}
         </ion-card-content>
