@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AnimePageRoutingModule } from './anime-routing.module';
 
 import { AnimePage } from './anime.page';
-import { SharedModule } from '../../shared/shared.module';
+import { ComponentsModule } from 'src/app/shared/components/components.module';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { SharedModule } from '../../shared/shared.module';
     FormsModule,
     IonicModule,
     AnimePageRoutingModule,
-    SharedModule
+    ComponentsModule
   ],
   declarations: [AnimePage]
 })

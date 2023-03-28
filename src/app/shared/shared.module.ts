@@ -4,7 +4,6 @@ import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
-import { SearchbarComponent } from './searchbar/searchbar.component';
 
 
 
@@ -12,7 +11,6 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
   declarations: [
     MenuComponent,
     HeaderComponent,
-    SearchbarComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +20,6 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
   exports:[
     MenuComponent,
     HeaderComponent,
-    SearchbarComponent
   ]
 })
 export class SharedModule { }
