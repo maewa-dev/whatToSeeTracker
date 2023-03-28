@@ -9,3 +9,16 @@ GET  https://api.simkl.com/anime/trending/week?client_id=5bba675b79c32d0e6576338
 
 //css highlight
 https://alvarotrigo.com/blog/css-highlight-text/
+
+
+
+
+
+
+Anime
+    pagina global
+    pagina de informacion con generacion de capitulos
+
+    busqueda
+    paginacion de los capitulos (limitar a 100 y cargar los botones de 100 en 100)
+    

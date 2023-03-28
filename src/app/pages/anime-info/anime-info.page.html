@@ -37,28 +37,6 @@
     </ion-grid>
   </ion-card>
 
-  <ion-grid>
-
-    <ion-row>
-      <ion-col size="1" *ngFor="let item of episodes">
-
-        <ion-button (click)="toggleSeen(item.episode)" fill="clear" color="dark" [ngClass]='{marked: item.seen}'>
-          {{item.episode}}
-
-          <!--  <ion-icon *ngIf="item.seen; else numEpisode" name="eye-outline" slot="icon-only"></ion-icon>
-    
-          <ng-template #numEpisode>
-            {{item.episode}}
-          </ng-template> -->
-
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-
-
-
-
+<app-episode-accordion *ngFor="let item of pagination" [page]="item" [pagination]="pagination" [lastEmmited]="animeInfo?.total_episodes"></app-episode-accordion>
 
 </ion-content>

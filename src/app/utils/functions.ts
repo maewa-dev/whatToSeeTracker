@@ -8,3 +8,12 @@ export function numberToArray(number:number) {
 
     return array;
 }
+
+export function numberToArrayRange(initial:number, final:number) {
+    let array = [];
+    for (let i=initial; i<=final ; i++){
+        array.push(i)          
+    }
+
+    return array;
+}

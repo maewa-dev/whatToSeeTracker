@@ -1,0 +1,15 @@
+<ion-accordion-group  > 
+
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ion-label>Ver {{accordionInitialEpisode}} - {{isLastAccordion ? lastEmmited: accordionFinalEpisode}} </ion-label>
+    </ion-item>
+    
+    <div class="ion-padding" slot="content" >
+      <ion-button *ngFor="let button of buttons" (click)="toggleSeen(button.episode)" fill="clear" color="dark" [ngClass]='{marked: button.seen}'>
+        {{button.episode}}
+      </ion-button>
+    </div>
+
+  </ion-accordion>
+</ion-accordion-group>

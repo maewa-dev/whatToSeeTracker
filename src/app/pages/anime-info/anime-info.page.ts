@@ -17,7 +17,6 @@ export class AnimeInfoPage implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private animeService: AnimeService,
-
     private router: Router
   ) { }
 
@@ -28,6 +27,8 @@ export class AnimeInfoPage implements OnInit {
   animeInfo!: AnimeInfo;
   episodes: any[];
   status: {[key: string]: string} = status
+
+  pagination: number[] = [0]
 
   ngOnInit(): void {
     this.router.events.subscribe(e => {
@@ -42,20 +43,10 @@ export class AnimeInfoPage implements OnInit {
       ).subscribe( anime => {
         this.animeInfo = anime
 
-        this.episodes = [...Array(this.animeInfo?.total_episodes)].map((_,i) => {
-          return {
-            episode: i+1, 
-            seen: false
-          }
-        })
-
-        //this.episodes = numberToArray(this.animeInfo?.total_episodes)
+        let numPage = Math.floor(this.animeInfo?.total_episodes / 100)
+        this.pagination = numberToArray(numPage+1)  //todo_mrt para que cargen los 'ultimos'
+    
       });
-  }
-
-
-  toggleSeen(episode:number ) {
-    this.episodes = this.episodes.map(e => e.episode === episode ? {...e, seen: !e.seen } : e);
   }
 
   get statusColorScheme(): string {
