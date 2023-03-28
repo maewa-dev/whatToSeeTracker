@@ -18,7 +18,11 @@ https://alvarotrigo.com/blog/css-highlight-text/
 Anime
     pagina global
     pagina de informacion con generacion de capitulos
-
     busqueda
     paginacion de los capitulos (limitar a 100 y cargar los botones de 100 en 100)
+
+
+    fixs
+        paginacion de los capitulos. 
+        Si el capitulo acaba en un numero redondo (Naruto Shippuden - 500), se esta generando un acordeon extra
     
