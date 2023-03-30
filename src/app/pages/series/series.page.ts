@@ -16,8 +16,7 @@ export class SeriesPage implements OnInit {
       if(Array.isArray(resp)){
         this.bestSeries = resp;
       } 
-    })
-    ;
+    });
   }
 
   bestSeries : Series[] = [];
@@ -27,8 +26,7 @@ export class SeriesPage implements OnInit {
       if(Array.isArray(resp)){
         this.bestSeries = resp;
       } 
-    })
-    ;
+    });
   }
 
 }
