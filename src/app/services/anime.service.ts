@@ -69,7 +69,6 @@ export class AnimeService {
   searchByQuery(query:string) {
     this.getAnimes(query).subscribe(resp => {
       this._animes.next(resp)
-      console.log('service', resp)
     })
   }
 }

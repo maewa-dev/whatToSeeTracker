@@ -23,7 +23,7 @@ export class MenuComponent  implements OnInit {
     {
       name: 'Series',
       icon: '/assets/icon/series.png',
-      path: '',
+      path: 'series',
     },
     {
       name: 'Películas',
