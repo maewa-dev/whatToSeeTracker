@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { AlertService } from 'src/app/services/alert.service';
 import { numberToArrayRange } from 'src/app/utils/functions';
 
 @Component({
@@ -9,6 +10,8 @@ import { numberToArrayRange } from 'src/app/utils/functions';
 })
 export class EpisodeAccordionComponent  implements OnInit {
 
+  ALERT_MESSAGE: string = '¿Quieres marcar los capítulos anteriores?';
+
   @Input() page: number ;
   @Input() pagination: number[] ;
   @Input() lastEmmited: number | undefined ;
@@ -17,7 +20,9 @@ export class EpisodeAccordionComponent  implements OnInit {
   accordionFinalEpisode: number;
   buttons: any[];
 
-  constructor(private alertController: AlertController) { }
+  constructor(
+    private alertService: AlertService
+    ) { }
 
   ngOnInit() {
     this.accordionInitialEpisode = (this.page - 1) * 100 +1;
@@ -48,7 +53,11 @@ export class EpisodeAccordionComponent  implements OnInit {
     let episodeActual = this.buttons.find(e => e.episode === episode)
     
     if ( previousEpisode  && !previousEpisode.seen && !episodeActual.seen ){
-      this.presentAlert(episode)
+      this.alertService.presentAlertTwoButtons(this.ALERT_MESSAGE ).then(resp => {
+        if(resp.data.accepted) {
+          this.markPreviousEpisode(episode)
+        } 
+      })
     } else {
       this.markEpisode(episode)
     } 
@@ -60,30 +69,6 @@ export class EpisodeAccordionComponent  implements OnInit {
 
   markPreviousEpisode(episode:number) {
     this.buttons = this.buttons.map(e => e.episode <= episode ? {...e, seen: true } : e);
-  }
-
-  async presentAlert(episode:number) {
-    const alert = await this.alertController.create({
-      header: '¿Quieres marcar los capítulos anteriores?',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          handler: () => { this.markEpisode(episode)
-          },
-        },
-        {
-          text: 'OK',
-          role: 'confirm',
-          handler: () => {
-            this.markPreviousEpisode(episode)
-          },
-        },
-      ],
-    });
-
-    await alert.present();
-
   }
 
 }
