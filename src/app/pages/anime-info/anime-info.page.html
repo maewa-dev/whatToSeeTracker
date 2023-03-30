@@ -35,6 +35,13 @@
     </ion-grid>
   </ion-card>
 
-<app-episode-accordion *ngFor="let item of pagination" [page]="item" [pagination]="pagination" [lastEmmited]="animeInfo?.total_episodes"></app-episode-accordion>
+  <ng-container>
+    <app-episode-accordion
+      *ngFor="let item of pagination"
+      [page]="item"
+      [pagination]="pagination"
+      [lastEmmited]="animeInfo?.total_episodes">
+    </app-episode-accordion>
+  </ng-container>
 
 </ion-content>

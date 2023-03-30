@@ -44,7 +44,9 @@ export class AnimeInfoPage implements OnInit {
         this.animeInfo = anime
 
         let numPage = Math.floor(this.animeInfo?.total_episodes / 100)
-        this.pagination = numberToArray(numPage+1)  //todo_mrt para que cargen los 'ultimos'
+        this.animeInfo?.total_episodes % 100 === 0
+          ? this.pagination = numberToArray(numPage)  //todo_mrt para que cargen los 'ultimos'
+          : this.pagination = numberToArray(numPage+1)
     
       });
   }
