@@ -19,3 +19,8 @@ export function getUrlBestAnimes() {
 export function getUrlBestSeries() {
     return simklParams.baseUrl + '/tv/best/filter?type=tv&client_id=' + environment.apikey
 }
+
+export function getUrlTrendingMovies() {
+    
+    return simklParams.baseUrl + '/movies/trending/week?client_id=' + environment.apikey
+}

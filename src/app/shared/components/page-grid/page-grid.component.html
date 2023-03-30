@@ -1,9 +1,12 @@
 <ion-grid>
   <ion-row>
-    <ion-col sizeXl="2" sizeMd="4" sizeXs="6" *ngFor="let show of showsInfo">
+    <ion-col sizeXl="2" sizeMd="4" sizeXs="12" *ngFor="let show of showsInfo">
       <ion-card routerLink='{{ "/" + subpage + "/" + show.ids.simkl_id }}' class="animate__animated animate__fadeIn">
-        <img src='{{ "https://simkl.in/posters/" + show.poster + "_w" + ".jpg" }}'>
-        <ion-card-header>
+          <img 
+           src='{{ "https://simkl.in/posters/" + show.poster + "_m" + ".jpg" }}' 
+           
+           >
+          <ion-card-header *ngIf="show.title">
           <ion-card-title>{{show.title}}</ion-card-title>
           <ion-card-subtitle>{{show.year}}</ion-card-subtitle>
         </ion-card-header>

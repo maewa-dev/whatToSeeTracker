@@ -1,5 +1,21 @@
+ion-col {
+    display: flex;
+    justify-content: center ;
+}
+
+ion-card {
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+}
+
 ion-card-title{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+img {
+   height: 420px;
+   width: 280px;
 }
