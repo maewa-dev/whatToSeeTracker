@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AnimeService } from 'src/app/services/anime.service';
 import { SeriesService } from 'src/app/services/series.service';
+import { MovieService } from '../../../services/movie.service';
 
 @Component({
   selector: 'app-searchbar',
@@ -11,7 +12,8 @@ export class SearchbarComponent implements OnInit {
 
   constructor(
     private animeService: AnimeService,
-    private seriesService: SeriesService
+    private seriesService: SeriesService,
+    private movieService: MovieService
   ) { }
 
   @Input() type: string = '';
@@ -27,8 +29,10 @@ export class SearchbarComponent implements OnInit {
       case 'series':
         this.seriesService.searchByQuery(query);
         break;
+      case 'movie':
+        this.movieService.searchByQuery(query);
+        break;
     }
-    //todo_mrt peliculas
     //todo_mrt libros
   }
 
