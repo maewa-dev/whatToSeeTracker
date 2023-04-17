@@ -14,6 +14,7 @@ export class MovieService {
 
   _trendingMovies = new BehaviorSubject( {} );
   _movies = new BehaviorSubject( {} );
+  _movieInfo = new BehaviorSubject( {} );
   type: string = 'movie'
 
   search() {
@@ -38,7 +39,7 @@ export class MovieService {
     }
   }
 
-  get series():Observable<any> {
+  get movies():Observable<any> {
     return this._movies.asObservable();
   }
 
@@ -46,5 +47,14 @@ export class MovieService {
     this.getMovies(query).subscribe(resp => {
       this._movies.next(resp);
     })
+  }
+
+
+  getMovieInfo(query:string): Observable<any | {}> {
+    return this.http.get(simkl.getUrlAnimeInfo(query)).pipe(map(animeInfo => animeInfo));
+  }
+
+  get animeInfo():Observable<any> {
+    return this._movieInfo.asObservable();
   }
 }

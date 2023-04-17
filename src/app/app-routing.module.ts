@@ -18,13 +18,18 @@ const routes: Routes = [
   {
     path: 'anime-info/:simklCode',
     loadChildren: () => import('./pages/anime-info/anime-info.module').then( m => m.AnimeInfoPageModule)
-  },  {
+  },
+  {
     path: 'series',
     loadChildren: () => import('./pages/series/series.module').then( m => m.SeriesPageModule)
   },
   {
     path: 'movies',
     loadChildren: () => import('./pages/movies/movies.module').then( m => m.MoviesPageModule)
+  },
+  {
+    path: 'movie-info/:simklCode',
+    loadChildren: () => import('./pages/movie-info/movie-info.module').then( m => m.MovieInfoPageModule)
   },
 
 ];

@@ -9,11 +9,12 @@ import { MovieService } from '../../services/movie.service';
 export class MoviesPage implements OnInit {
 
   constructor(
-    private moivieService: MovieService
+    private movieService: MovieService
   ) { 
-    this.moivieService.trendingMovies.subscribe(resp=>{
+    this.movieService.trendingMovies.subscribe(resp=>{
       if(Array.isArray(resp)){
         this.trendingMovies = resp;
+        console.log(resp)
       } 
     });
   }
@@ -21,7 +22,7 @@ export class MoviesPage implements OnInit {
   trendingMovies :any[];
 
   ngOnInit() {
-    this.moivieService.series.subscribe(resp=>{
+    this.movieService.movies.subscribe(resp=>{
       if(Array.isArray(resp)){
         this.trendingMovies = resp;
       } 
